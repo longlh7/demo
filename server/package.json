@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/longlh7/speechless/issues"
   },
-  "homepage": "https://github.com/longlh7/speechless#readme"
+  "homepage": "https://github.com/longlh7/speechless#readme",
+  "dependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.16.1"
+  }
 }
