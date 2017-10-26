@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import App from '../components/App'
+import Home from '../components/Home'
 import { changeStatus } from '../actions/change'
 import { getCategory } from '../actions/category'
 
@@ -22,9 +22,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     }
 })
 
-const AppContainer = connect(
+const HomeContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(Home)
 
-export default AppContainer
+export default HomeContainer
