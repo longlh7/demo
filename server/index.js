@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
   }))
 })
 
-const server = app.listen(3001, function() {
+const server = app.listen(3000, function() {
     const host = server.address().address
     const port = server.address().port
     console.log('Server is running on ', host + ': '+port);
