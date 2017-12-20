@@ -1,5 +1,5 @@
 export const config = {
-  prod: false,
+  prod: true,
   protocol: ['http', 'https'],
   ip: ['localhost', 'ec2-18-220-134-62.us-east-2.compute.amazonaws.com'],
   port: ['3000', '3000'],

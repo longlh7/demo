@@ -5,11 +5,10 @@ class Counter extends React.Component {
         const { num } = this.props
         return(
           <div>
-	    <h1>Counter</h1>
             <h1 style={{
                 textAlign: 'center'
             }}>
-              { num }
+              { num != undefined? num: 'Cannot connect to server' }
             </h1>
           </div>
         )
