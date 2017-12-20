@@ -1,33 +1,41 @@
-const express = require('express')
-const app = express()
-const bodyParser = require('body-parser')
+const app = require('express')()
+const server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 let counter = 0
 
-// app.use(bodyParser.json())
+server.listen(3000, function() {
+    console.log('Running on port 3000');
+});
+
+io.on('connection', function (socket) {
+  socket.on('action', (action) => {
+      switch (action.type) {
+        case 'server/increase':
+          console.log('increase');
+          io.sockets.emit('action', {
+            type: 'client/UPDATE',
+            num: ++counter
+          })
+          break;
+        case 'server/decrease':
+          console.log('decrease');
+          io.sockets.emit('action', {
+            type: 'client/UPDATE',
+            num: --counter
+          })
+          break;
+        default:
+
+      }
+  });
+});
+
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
-app.get('/increase', (req, res) => {
-    res.writeHead(200, {
-        "Content-Type": "application/json"
-    })
-    res.end(JSON.stringify({
-        num: ++counter
-    }))
-})
-
-app.get('/decrease', (req, res) => {
-    res.writeHead(200, {
-        "Content-Type": "application/json"
-    })
-    res.end(JSON.stringify({
-        num: --counter
-    }))
-})
 
 app.get('/', (req, res) => {
   res.writeHead(200, {
@@ -36,10 +44,4 @@ app.get('/', (req, res) => {
   res.end(JSON.stringify({
       num: counter
   }))
-})
-
-const server = app.listen(3000, function() {
-    const host = server.address().address
-    const port = server.address().port
-    console.log('Server is running on ', host + ': '+port);
 })

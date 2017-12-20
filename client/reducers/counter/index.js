@@ -2,11 +2,11 @@ const counter = (state = {
     num: undefined
 }, action) => {
     switch (action.type) {
-      case 'UPDATE':
-          console.log('REDUCER ', action);
+      case 'client/UPDATE':
+          console.log('action', action);
           return {
               ...state,
-              num: action.value
+              num: action.num
           }
       default:
         return state

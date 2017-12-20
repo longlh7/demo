@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Cal from '../../components/cal/'
-import { increase, decrease, getCount } from '../../actions/restful'
+import { increase, decrease } from '../../actions/socket'
 
 const mapStateToProps = (state, ownProps) => {
     return state

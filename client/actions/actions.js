@@ -1,4 +1,4 @@
-export const update = (value) => ({
-    type: 'UPDATE',
-    value
+export const update = (num) => ({
+    type: 'client/UPDATE',
+    num
 })
