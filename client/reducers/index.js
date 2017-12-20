@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import category from './category'
+import counter from './counter'
 
 const RigMarket = combineReducers({
-  category
+  counter  
 })
 
 export default RigMarket
