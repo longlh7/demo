@@ -1,6 +1,6 @@
 /server/node_modules/*
 /client/node_modules/*
-/client/bundle.js
+/client/public/*
 /client/config/env.js
 client/package-lock.json
 server/package-lock.json

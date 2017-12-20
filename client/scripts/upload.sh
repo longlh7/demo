@@ -6,7 +6,7 @@ bucket='www.counter.com'
 bucketUri='s3://'$bucket
 echo 'Bucket:' $bucket
 
-project='/home/ec2-user/workspace/speechless/client'
+project='/home/ec2-user/workspace/demo/client'
 echo 'Project:' $project
 
 # Delete
